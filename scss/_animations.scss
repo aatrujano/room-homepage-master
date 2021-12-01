@@ -1,0 +1,20 @@
+@keyframes fadeIn {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    60%{
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 400ms ease-in;
+}

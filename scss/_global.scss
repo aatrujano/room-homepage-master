@@ -1,0 +1,78 @@
+/*GOLBAL*/
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: $spartan;
+  overflow-x: hidden;
+  min-width: 375px;
+  .attribution {
+    padding: 0.3rem;
+    text-align: center;
+    color: #a1a1a1;
+    background-color: black;
+    font-size: 12px;
+  }
+  .overlay{
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background-color: $black;
+    opacity: 0;
+    z-index: 5;
+    transition: all 350ms ease-in;
+    @include breakPointUp ('520'){
+      display: none;
+    }
+    &.showOverlay{
+      height: 100%;
+      opacity: 0.5;
+    }
+  }
+}
+
+p {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: $darkGray;
+  font-weight: 600;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+/*DISPLAY*/
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.hidden {
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+.displayed {
+  z-index: 4;
+  position: relative;
+  top: unset;
+}

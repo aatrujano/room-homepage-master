@@ -1,0 +1,51 @@
+.main {
+  @include breakPointDown('840'){
+    flex-direction: column;
+  } 
+  &__imgDark,
+  &__imgLight {
+    width: 33.3333%;
+    height: 16.625rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include breakPointDown('840'){
+      width: unset;
+    }
+  }
+  &__imgDark {
+    background-image: url('../images/image-about-dark.jpg');
+  }
+  &__imgLight {
+    background-image: url('../images/image-about-light.jpg');
+    @include breakPointDown('840'){
+      background-position-y: -1.5rem;
+    }
+    @include breakPointDown('519'){
+      background-position-y: unset;
+    }
+    
+  }
+
+  &__info {
+    width: 33.3333%;
+    min-width: 28.39rem;
+    padding: 3rem;
+    justify-content: center;
+    
+    &-title {
+      margin-bottom: 1rem;
+      letter-spacing: 4px;
+      font-weight: 900;
+      font-size: 12px;
+    }
+    @include breakPointDown('840'){
+      width: unset;
+      height: 16.625rem;
+    }
+    @include breakPointDown('519'){
+      min-width: unset;
+      height: unset;
+    }
+  }
+}

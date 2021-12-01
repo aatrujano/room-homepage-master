@@ -1,0 +1,26 @@
+$breakPointsUp: (
+  '520': 32.5rem,
+  '970': 60.625rem,
+);
+
+$breakPointsDown: (
+  '375': 23.4375rem,
+  '420': 26.25rem,
+  '519': 32.4375rem,
+  '840': 52.5rem,
+  '940': 58.75rem,
+  '1000': 62.5rem,
+  '1064': 66.5rem,
+);
+
+@mixin breakPointUp($size) {
+  @media (min-width: map-get($breakPointsUp , $size )) {
+    @content;
+  }
+}
+
+@mixin breakPointDown($size) {
+  @media (max-width: map-get($breakPointsDown , $size )) {
+    @content;
+  }
+}
