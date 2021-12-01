@@ -24,6 +24,27 @@ body {
   font-family: "Spartan", sans-serif;
   overflow-x: hidden;
   min-width: 375px;
+  background-image: url("../images/desktop-image-hero-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+
+@media (min-height: 51.47438rem) {
+  body {
+    height: 100vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 52.5rem) {
+  body {
+    height: unset;
+  }
 }
 
 body .attribution {
@@ -338,6 +359,7 @@ a:hover {
           align-items: center;
   padding: 4rem;
   width: 36.375rem;
+  background-color: #ffffff;
 }
 
 @media (max-width: 66.5rem) {
@@ -512,6 +534,7 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #ffffff;
 }
 
 .main__info-title {

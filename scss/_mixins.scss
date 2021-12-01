@@ -13,7 +13,11 @@ $breakPointsDown: (
   '1064': 66.5rem,
 );
 
-@mixin breakPointUp($size) {
+$heightBreakPointsUp: (
+    '823.59': 51.474375rem,
+  );
+
+  @mixin breakPointUp($size) {
   @media (min-width: map-get($breakPointsUp , $size )) {
     @content;
   }
@@ -21,6 +25,12 @@ $breakPointsDown: (
 
 @mixin breakPointDown($size) {
   @media (max-width: map-get($breakPointsDown , $size )) {
+    @content;
+  }
+}
+
+@mixin heigthBreakPointUp($size) {
+  @media (min-height: map-get($heightBreakPointsUp , $size )) {
     @content;
   }
 }

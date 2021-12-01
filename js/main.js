@@ -2,6 +2,7 @@ const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const closeMenu = document.getElementById('closeMenu');
 const overlay = document.getElementById('overlay');
+const body = document.querySelector('body');
 // DISPLAY MOBILE MENU
 const addClass = (element, className) => {
   element.classList.add(className);
@@ -13,7 +14,6 @@ const showMobileMenu = () => {
   addClass(hamburger, 'open');
   addClass(mobileMenu, 'display');
   addClass(overlay, 'showOverlay');
-
 };
 
 const closeMobileMenu = () => {
@@ -45,6 +45,12 @@ let widthOfMobileImg = 375;
 let prevInfo;
 let selectedInfo;
 
+const imgUrls = [
+  '../images/desktop-image-hero-1.jpg',
+  '../images/desktop-image-hero-2.jpg',
+  '../images/desktop-image-hero-3.jpg',
+];
+
 const moveLeft = () => {
   slide--;
   if (slide < 1) {
@@ -53,6 +59,7 @@ const moveLeft = () => {
       (numOfImgs - 1) * widthOfMobileImg
     }px)`;
     slide = numOfImgs;
+    body.style.backgroundImage = `url(${imgUrls[slide-1]})`;
     prevInfo = infoArr[0];
     selectedInfo = infoArr[2];
     removeClass(prevInfo, 'displayed');
@@ -62,6 +69,7 @@ const moveLeft = () => {
     addClass(selectedInfo, 'displayed');
     addClass(selectedInfo, 'fadeIn');
   } else {
+    body.style.backgroundImage = `url(${imgUrls[slide-1]})`;
     slider.style.transform = `translate(-${(slide - 1) * widthOfimg}px)`;
     mobileSlider.style.transform = `translate(-${
       (slide - 1) * widthOfMobileImg
@@ -83,6 +91,7 @@ const moveRight = () => {
     slider.style.transform = `translate(0px)`;
     mobileSlider.style.transform = `translate(0px)`;
     slide = 1;
+    body.style.backgroundImage = `url(${imgUrls[slide-1]})`;
     prevInfo = infoArr[infoArr.length - 1];
     selectedInfo = infoArr[0];
     removeClass(prevInfo, 'displayed');
@@ -92,6 +101,7 @@ const moveRight = () => {
     addClass(selectedInfo, 'displayed');
     addClass(selectedInfo, 'fadeIn');
   } else {
+    body.style.backgroundImage = `url(${imgUrls[slide-1]})`;
     slider.style.transform = `translate(-${(slide - 1) * widthOfimg}px)`;
     mobileSlider.style.transform = `translate(-${
       (slide - 1) * widthOfMobileImg

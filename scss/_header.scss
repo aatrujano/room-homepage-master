@@ -139,6 +139,7 @@
     align-items: center;
     padding: 4rem;
     width: 36.375rem;
+    background-color: $white;
     @include breakPointDown('1064') {
       padding-left: 2rem;
       padding-right: 2rem;
